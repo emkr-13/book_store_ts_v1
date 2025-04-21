@@ -1,7 +1,7 @@
 import { db } from "../config/db";
 import { users } from "../models/user";
 import { eq } from "drizzle-orm";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
 import { sendResponse } from "../utils/responseHelper";

@@ -1,6 +1,6 @@
 import { db } from "../config/db";
 import { users } from "../models/user";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 async function seed() {
   const salt = await bcrypt.genSalt(10);
