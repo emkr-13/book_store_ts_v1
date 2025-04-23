@@ -69,4 +69,5 @@ export const books = pgTable("books", {
   genre: genrebookEnum("genre").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
+  deletedAt: timestamp("deleted_at")
 });

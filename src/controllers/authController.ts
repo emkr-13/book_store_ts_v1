@@ -69,7 +69,10 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    sendResponse(res, 200, "Login successful", { authToken, refreshToken });
+    sendResponse(res, 200, "Login successful", {
+      token: authToken,
+      refreshToken,
+    });
   } catch (error) {
     console.error("Unexpected error during login:", error);
     sendResponse(res, 500, "An unexpected error occurred", error);
