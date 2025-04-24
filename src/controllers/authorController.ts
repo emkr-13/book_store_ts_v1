@@ -96,7 +96,7 @@ export const createAuthor = async (
       .values({ name, bio })
       .returning();
 
-    sendResponse(res, 201, "Author created successfully", { data: newAuthor });
+    sendResponse(res, 201, "Author created successfully");
   } catch (error) {
     console.error("Error creating author:", error);
     sendResponse(res, 500, "Internal server error");
@@ -128,9 +128,7 @@ export const updateAuthor = async (
       return;
     }
 
-    sendResponse(res, 200, "Author updated successfully", {
-      data: updatedAuthor,
-    });
+    sendResponse(res, 200, "Author updated successfully");
   } catch (error) {
     console.error("Error updating author:", error);
     sendResponse(res, 500, "Internal server error");
@@ -161,9 +159,7 @@ export const deleteAuthor = async (
       return;
     }
 
-    sendResponse(res, 200, "Author deleted successfully", {
-      data: deletedAuthor,
-    });
+    sendResponse(res, 200, "Author deleted successfully");
   } catch (error) {
     console.error("Error deleting author:", error);
     sendResponse(res, 500, "Internal server error");

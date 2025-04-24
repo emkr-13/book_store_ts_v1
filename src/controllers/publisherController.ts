@@ -77,7 +77,9 @@ export const getPublisherById = async (
       return;
     }
 
-    sendResponse(res, 200, "Publisher retrieved successfully", publisher);
+    sendResponse(res, 200, "Publisher retrieved successfully", {
+      data: publisher,
+    });
   } catch (error) {
     console.error("Error retrieving publisher:", error);
     sendResponse(res, 500, "Internal server error");
@@ -100,7 +102,7 @@ export const createPublisher = async (
       .values({ name, address, phone, description })
       .returning();
 
-    sendResponse(res, 201, "Publisher created successfully", newPublisher);
+    sendResponse(res, 201, "Publisher created successfully");
   } catch (error) {
     console.error("Error creating publisher:", error);
     sendResponse(res, 500, "Internal server error");
@@ -129,7 +131,7 @@ export const updatePublisher = async (
       return;
     }
 
-    sendResponse(res, 200, "Publisher updated successfully", updatedPublisher);
+    sendResponse(res, 200, "Publisher updated successfully");
   } catch (error) {
     console.error("Error updating publisher:", error);
     sendResponse(res, 500, "Internal server error");
@@ -158,7 +160,7 @@ export const deletePublisher = async (
       return;
     }
 
-    sendResponse(res, 200, "Publisher deleted successfully", deletedPublisher);
+    sendResponse(res, 200, "Publisher deleted successfully");
   } catch (error) {
     console.error("Error deleting publisher:", error);
     sendResponse(res, 500, "Internal server error");
